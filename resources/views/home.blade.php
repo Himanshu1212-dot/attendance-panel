@@ -13,8 +13,11 @@
                             {{ session('status') }}
                         </div>
                     @endif
-
-                    {{ __('You are logged in!') }}
+                    @if (Auth::guest())
+                        {{ __('Please make a registration first.') }}
+                    @else
+                        {{ __('You are logged in!') }}
+                    @endif
                 </div>
             </div>
         </div>

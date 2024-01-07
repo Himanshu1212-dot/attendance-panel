@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AccountController;
 
 
 
@@ -17,7 +18,8 @@ use App\Http\Controllers\HomeController;
 */
 
 Route::get('/', function () {
-    return view('layouts/app');
+    return view('welcome');
 });
 Auth::routes();
-Route::get('/home', [HomeController::class, 'index'])->name('home');
+Route::get('/account', [HomeController::class, 'index'])->name('my-account');
+Route::post('/account/{id}', [AccountController::class, 'update'])->name('update.account');
