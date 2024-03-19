@@ -60,7 +60,7 @@
                                 <select class="form-select" id="role" name="role" required>
                                     <option selected disabled value="">Choose Role...</option>
                                     <option value="admin">Admin</option>
-                                    <option value="techer">Teacher</option>
+                                    <option value="teacher">Teacher</option>
                                     <option value="parent">Parent</option>
                                   </select>
                                 @error('role')

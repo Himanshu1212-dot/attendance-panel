@@ -13,6 +13,9 @@ $user_email = Auth::user()->email;
                     @if (Auth::guest())
                         {{ __('Please make a registration first.') }}
                     @else
+                        @empty(Auth::user()->role)
+                            {{ 'You are logged'}}
+                        @endempty
                         <p>{{ 'You are logged in as ' . Str::ucfirst(Auth::user()->role) }}</p>
                         <div class="pb-3">
                             <input name="user-name" type="text" value="{{ __($user_name) }}" readonly>
